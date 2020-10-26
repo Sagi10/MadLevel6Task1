@@ -11,9 +11,11 @@ class ColorViewModel(application: Application) : AndroidViewModel(application) {
 
     private val colorRepository = ColorRepository()
 
+    //use encapsulation to expose as LiveData
+    val colorItems: LiveData<List<ColorItem>>
+      get() = _colorItems
+
     private val _colorItems = MutableLiveData<List<ColorItem>>().apply {
         value = colorRepository.getColorItems()
     }
-
-    val colorItems: LiveData<List<ColorItem>> get() = _colorItems
 }

@@ -9,7 +9,6 @@ import com.bumptech.glide.Glide
 import com.lalee.madlevel6task1.R
 import com.lalee.madlevel6task1.model.ColorItem
 import kotlinx.android.synthetic.main.item_color.view.*
-import kotlin.reflect.KFunction0
 
 class ColorAdapter(private var colors: List<ColorItem>, private var onClick: (ColorItem) -> Unit) :
     RecyclerView.Adapter<ColorAdapter.ViewHolder>() {
@@ -34,9 +33,7 @@ class ColorAdapter(private var colors: List<ColorItem>, private var onClick: (Co
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         init {
-            itemView.setOnClickListener {
-                onClick(colors[adapterPosition])
-            }
+            itemView.setOnClickListener { onClick(colors[adapterPosition]) }
         }
 
         fun dataBind(colorItem: ColorItem) {
