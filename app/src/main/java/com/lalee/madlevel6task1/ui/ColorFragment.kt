@@ -35,6 +35,11 @@ class ColorFragment : Fragment() {
         rv_colors.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         rv_colors.adapter = colorAdapter
 
+        observeColors()
+    }
+
+    private fun observeColors() {
+        TODO("Not yet implemented")
     }
 
     private fun onColorClick(colorItem: ColorItem) {
